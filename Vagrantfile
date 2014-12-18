@@ -9,4 +9,13 @@ Vagrant.configure("2") do |config|
 
   # SSH Agent forwarding
   config.ssh.forward_agent = true
+
+  ## For masterless, mount your salt file root
+  # config.vm.synced_folder "salt/roots/", "/srv/"
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.verbose = :vv
+    ansible.playbook = "provisioning/playbook.yml"
+  end
+
 end
