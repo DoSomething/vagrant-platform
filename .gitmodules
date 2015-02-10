@@ -1,3 +1,0 @@
-[submodule "server-playbooks"]
-	path = server-playbooks
-	url = git@github.com:DoSomething/server-playbooks.git
