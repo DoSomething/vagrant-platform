@@ -1,5 +1,23 @@
 ---
 
 - name: Update software packages
-  sudo: true
+  sudo: yes
   apt: update_cache=yes cache_valid_time=3600
+
+- name: Install Common Tools
+  sudo: yes
+  apt: name={{ item }} state=latest
+  with_items:
+    - git
+    - curl
+    - mailutils
+
+- name: Check current timezone
+  shell: cat /etc/timezone
+  register: get_timezone
+  changed_when: False
+
+- name: Set timezone
+  sudo: yes
+  command: timedatectl set-timezone {{ timezone }}
+  when: '"{{ timezone }}" not in get_timezone.stdout'

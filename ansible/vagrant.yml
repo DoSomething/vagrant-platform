@@ -3,4 +3,4 @@
 - name: Setup vagrant
   hosts: all
   roles:
-    - { role: base }
+    - { role: base, timezone: 'America/New_York' }
