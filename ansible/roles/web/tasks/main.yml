@@ -30,3 +30,7 @@
   shell: composer self-update
   register: composer_update
   changed_when: '"You are already using composer" not in composer_update.stdout'
+
+- name: Install Web Server nginx
+  apt: name=nginx state=latest
+  sudo: yes
