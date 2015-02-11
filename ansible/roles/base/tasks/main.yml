@@ -11,6 +11,7 @@
     - git
     - curl
     - mailutils
+    - mysql-client
 
 - name: Check current timezone
   shell: cat /etc/timezone

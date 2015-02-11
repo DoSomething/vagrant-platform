@@ -4,4 +4,5 @@
   hosts: all
   roles:
     - { role: base, timezone: 'America/New_York' }
+    - { role: db }
     - { role: web, composer_path: '/usr/local/bin' }
