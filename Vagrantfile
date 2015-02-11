@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
     ansible.verbose = :vv
     ansible.playbook = "ansible/vagrant.yml"
     # ansible.ask_vault_pass = true
-    # ansible.vault_password_file = ".vault.txt"
+    ansible.vault_password_file = ".vault.txt"
   end
 
 end

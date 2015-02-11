@@ -22,3 +22,7 @@
   sudo: yes
   command: timedatectl set-timezone {{ timezone }}
   when: '"{{ timezone }}" not in get_timezone.stdout'
+
+- name: Create user
+  sudo: yes
+  user: name=dosomething password={{ dosomething_user_password }}
