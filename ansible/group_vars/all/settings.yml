@@ -1,0 +1,10 @@
+---
+
+# User
+app_user: dosomething
+
+# Base
+timezone: 'America/New_York'
+
+# Web
+composer_path: '/usr/local/bin'

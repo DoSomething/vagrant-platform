@@ -25,4 +25,4 @@
 
 - name: Create user
   sudo: yes
-  user: name=dosomething password={{ dosomething_user_password }}
+  user: name={{ app_user }} password={{ app_user_password }}

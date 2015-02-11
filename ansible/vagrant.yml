@@ -3,6 +3,6 @@
 - name: Setup vagrant
   hosts: all
   roles:
-    - { role: base, timezone: 'America/New_York' }
+    - { role: base }
     - { role: db }
-    - { role: web, composer_path: '/usr/local/bin' }
+    - { role: web }
