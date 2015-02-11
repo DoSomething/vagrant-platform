@@ -20,7 +20,13 @@
   sudo: yes
   shell: >
     curl -sS https://getcomposer.org/installer | php --
-    --install-dir=/usr/local/bin
+    --install-dir={{ composer_path }}
     --filename=composer
   args:
-    creates: /usr/local/bin/composer
+    creates: "{{ composer_path }}/composer"
+
+- name: Update Composer
+  sudo: yes
+  shell: composer self-update
+  register: composer_update
+  changed_when: '"You are already using composer" not in composer_update.stdout'
