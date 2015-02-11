@@ -1,0 +1,9 @@
+---
+
+- name: Drush | Install Make Local plugin
+  remote_user: "{{ app_user }}"
+  shell: drush -y dl make_local-6.x-1.0 creates=.drush/make_local
+
+- name: Drush | Install Drush Language plugin
+  remote_user: "{{ app_user }}"
+  shell: drush -y dl drush_language creates=.drush/drush_language
