@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # config.vm.synced_folder "salt/roots/", "/srv/"
 
   config.vm.provision "ansible" do |ansible|
-    ansible.verbose = :vv
+    ansible.verbose = :v
     ansible.playbook = "ansible/vagrant.yml"
     # ansible.ask_vault_pass = true
     ansible.vault_password_file = ".vault.txt"

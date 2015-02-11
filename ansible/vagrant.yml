@@ -6,3 +6,4 @@
     - { role: base }
     - { role: db }
     - { role: web }
+    - { role: app }

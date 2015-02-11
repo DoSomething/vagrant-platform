@@ -1,0 +1,19 @@
+---
+
+- name: Create Composer app folder
+  remote_user: "{{ app_user }}"
+  file: path=.composer state=directory
+
+- name: Upload Composer Tools dependencies file
+  remote_user: "{{ app_user }}"
+  copy: src=composer.json dest=.composer/composer.json
+
+- name: Install/Update Composer Tools
+  remote_user: "{{ app_user }}"
+  composer: command=update working_dir=.composer
+
+- name: Add Composer bin directory to the $PATH
+  remote_user: "{{ app_user }}"
+  lineinfile: >
+    dest=.profile
+    line="export PATH=$HOME/.composer/vendor/bin:$PATH"
