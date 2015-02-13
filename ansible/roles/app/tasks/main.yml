@@ -2,3 +2,4 @@
 
 - include: composer.yml
 - include: drush_plugins.yml
+- include: nodejs.yml

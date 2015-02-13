@@ -1,0 +1,11 @@
+---
+
+- name: Node.js | Add Repo
+  sudo: yes
+  shell: curl -sL https://deb.nodesource.com/setup | bash -
+  args:
+    creates: /etc/apt/sources.list.d/nodesource.list
+
+- name: Node.js | Install
+  apt: name=nodejs state=latest
+  sudo: yes
