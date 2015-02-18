@@ -1,0 +1,14 @@
+#/bin/bash
+
+echo "Packing up Vagrant root"
+tar cf /var/www/vagrant.tar /vagrant
+
+echo "Migrating to /var/www/{{ app_host }}"
+tar -xf /var/www/vagrant.tar --strip 1 -C /var/www/{{ app_host }}/
+rm /var/www/vagrant.tar
+
+echo "Ensuring /var/www/vagrant/files"
+mkdir /var/www/{{ app_host }}/files
+
+echo "Done."
+echo

@@ -7,3 +7,4 @@
     - { role: db }
     - { role: web }
     - { role: app }
+    - { role: vagrant }

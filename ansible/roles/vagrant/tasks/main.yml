@@ -1,0 +1,8 @@
+---
+
+- name: Create setup-www script
+  remote_user: "{{ app_user }}"
+  template: >
+    src=scripts/setup-www.j2
+    dest=bin/setup-www
+    mode="u=rwx,g=r,o=r"
