@@ -8,6 +8,7 @@ timezone: 'America/New_York'
 
 # Web
 composer_path: '/usr/local/bin'
+php_ini_upload_max_filesize: '10M'
 
 # App
 app_host: dev.dosomething.org

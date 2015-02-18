@@ -4,3 +4,4 @@
 - include: drush.yml
 - include: nodejs.yml
 - include: app.yml
+- include: configure-php.yml
