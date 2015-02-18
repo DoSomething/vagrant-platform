@@ -8,3 +8,6 @@ timezone: 'America/New_York'
 
 # Web
 composer_path: '/usr/local/bin'
+
+# App
+app_host: dev.dosomething.org

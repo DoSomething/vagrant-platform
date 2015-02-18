@@ -1,5 +1,6 @@
 ---
 
 - include: composer.yml
-- include: drush_plugins.yml
+- include: drush.yml
 - include: nodejs.yml
+- include: app.yml

@@ -1,5 +1,12 @@
 ---
 
+- name: Drush | Make drush avaliable to the app user
+  remote_user: "{{ app_user }}"
+  file: >
+    src=~/.composer/vendor/bin/drush
+    dest=bin/drush
+    state=link
+
 - name: Drush | Install Make Local plugin
   remote_user: "{{ app_user }}"
   shell: drush -y dl make_local-6.x-1.0 creates=.drush/make_local

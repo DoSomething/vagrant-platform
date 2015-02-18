@@ -1,0 +1,5 @@
+---
+
+- name: Create web folder
+  file: path=/var/www/{{ app_host }} state=directory owner={{ app_user }}
+  sudo: yes
