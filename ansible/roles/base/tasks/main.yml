@@ -1,41 +1,6 @@
 ---
 
-- name: Update software packages
-  sudo: yes
-  apt: update_cache=yes cache_valid_time=3600
-
-- name: Install Common Tools
-  sudo: yes
-  apt: name={{ item }} state=latest
-  with_items:
-    - git
-    - curl
-    - mailutils
-    - mysql-client
-
-- name: Check current timezone
-  shell: cat /etc/timezone
-  register: get_timezone
-  changed_when: False
-
-- name: Set timezone
-  sudo: yes
-  command: timedatectl set-timezone {{ timezone }}
-  when: '"{{ timezone }}" not in get_timezone.stdout'
-
-- name: Create the app user
-  sudo: yes
-  user: >
-    name={{ app_user }}
-    password={{ app_user_password }}
-    shell=/bin/bash
-
-- name: Install public keys for the app user
-  sudo: yes
-  authorized_key: >
-    user={{ app_user }}
-    key="{{ lookup('file', 'authorized-keys') }}"
-
-- name: Setup sudoers for the app user
-  sudo: yes
-  template: src=sudoers/app_user.j2 dest=/etc/sudoers.d/{{ app_user }}
+- include: update-system.yml
+- include: install-common-tools.yml
+- include: setup-system.yml
+- include: setup-user.yml

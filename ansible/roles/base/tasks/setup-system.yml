@@ -1,0 +1,11 @@
+---
+
+- name: Check current timezone
+  shell: cat /etc/timezone
+  register: get_timezone
+  changed_when: False
+
+- name: Set timezone
+  sudo: yes
+  command: timedatectl set-timezone {{ timezone }}
+  when: '"{{ timezone }}" not in get_timezone.stdout'
