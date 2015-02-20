@@ -8,11 +8,8 @@
     option={{ item.option }}
     value={{ item.value }}
     backup=yes
-  with_items:
-    - { section: PHP,  option: upload_max_filesize, value: "{{ php_ini_upload_max_filesize }}" }
-    - { section: Date, option: date.timezone,       value: "{{ timezone }}" }
-  notify:
-  - restart php-fpm
+  with_items: php_ini_settings
+  notify: restart php-fpm
 
 - name: PHP | Setup FPM pool
   sudo: yes
@@ -22,17 +19,5 @@
     option={{ item.option }}
     value={{ item.value }}
     backup=yes
-  with_items:
-    - { option: user,   value: "{{ app_user }}" }
-    - { option: group,  value: "{{ app_user }}" }
-
-    - { option: listen,                 value: "{{ php_fpm_listen }}" }
-    - { option: listen.allowed_clients, value: "127.0.0.1" }
-    - { option: listen.mode,            value: "0600" }
-
-    - { option: pm.max_children,      value: "{{ php_fpm_max_children }}" }
-    - { option: pm.start_servers,     value: "{{ php_fpm_start_servers }}" }
-    - { option: pm.min_spare_servers, value: "{{ php_fpm_min_spare_servers }}" }
-    - { option: pm.max_spare_servers, value: "{{ php_fpm_max_spare_servers }}" }
-  notify:
-  - restart php-fpm
+  with_items: php_fpm_defaults + php_fpm_settings
+  notify: restart php-fpm
