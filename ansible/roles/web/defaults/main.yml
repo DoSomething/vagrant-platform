@@ -1,0 +1,5 @@
+---
+
+# Composer
+composer_self_update: no
+composer_path: '/usr/local/bin'
