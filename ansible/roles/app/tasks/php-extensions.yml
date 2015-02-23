@@ -1,0 +1,13 @@
+---
+
+- name: PHP Extensions | New Relic | Install repository
+  sudo: yes
+  apt_repository: repo="deb http://apt.newrelic.com/debian/ newrelic non-free"
+
+- name: PHP Extensions | New Relic | Install repository key
+  sudo: yes
+  apt_key: url=https://download.newrelic.com/548C16BF.gpg id=548C16BF
+
+- name: PHP Extensions | New Relic | Install PHP extension
+  sudo: yes
+  apt: name=newrelic-php5 state=latest force=yes
