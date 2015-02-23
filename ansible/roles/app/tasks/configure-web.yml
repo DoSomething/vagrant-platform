@@ -1,0 +1,19 @@
+---
+
+- name: Nginx | Install app vhost congif
+  sudo: yes
+  template: src=nginx/app.j2 dest=/etc/nginx/sites-available/{{ app_user }}
+  notify: restart nginx
+
+- name: Nginx | Enable app vhost
+  sudo: yes
+  file: >
+    src=/etc/nginx/sites-available/{{ app_user }}
+    dest=/etc/nginx/sites-enabled/{{ app_user }}
+    state=link
+  notify: restart nginx
+
+- name: Nginx | Disable default vhost
+  sudo: yes
+  file: path=/etc/nginx/sites-available/default state=absent
+  notify: restart nginx

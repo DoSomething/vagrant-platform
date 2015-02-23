@@ -1,14 +1,14 @@
 #/bin/bash
 
 echo "Packing up Vagrant root"
-tar cf /var/www/vagrant.tar /vagrant
+tar cf /tmp/vagrant.tar /vagrant
 
-echo "Migrating to /var/www/{{ app_host }}"
-tar -xf /var/www/vagrant.tar --strip 1 -C /var/www/{{ app_host }}/
-rm /var/www/vagrant.tar
+echo "Migrating to {{ app_root }}"
+tar -xf /tmp/vagrant.tar --strip 1 -C {{ app_root }}/
+rm /tmp/vagrant.tar
 
-echo "Ensuring /var/www/vagrant/files"
-mkdir /var/www/{{ app_host }}/files
+echo "Ensuring {{ app_root }}/files"
+mkdir {{ app_root }}/files
 
 echo "Done."
 echo

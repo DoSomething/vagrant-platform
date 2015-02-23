@@ -11,3 +11,4 @@ php_ini_upload_max_filesize: 10M
 
 # App
 app_host: dev.dosomething.org
+app_root: /var/www/{{ app_host }}
