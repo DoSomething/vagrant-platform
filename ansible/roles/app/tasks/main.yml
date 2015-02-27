@@ -9,3 +9,4 @@
 - include: configure-php.yml
 - include: configure-web.yml
 - include: configure-db.yml
+- include: configure-env.yml
