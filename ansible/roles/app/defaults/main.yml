@@ -1,5 +1,8 @@
 ---
 
+# Composer
+app_composer_update: no
+
 # PHP
 php_ini_settings: []
 php_fpm_socket: /var/run/php5-fpm.sock
