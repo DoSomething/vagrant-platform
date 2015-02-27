@@ -8,3 +8,4 @@
 - include: app.yml
 - include: configure-php.yml
 - include: configure-web.yml
+- include: configure-db.yml
