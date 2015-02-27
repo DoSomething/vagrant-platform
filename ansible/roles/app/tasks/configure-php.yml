@@ -18,6 +18,5 @@
     section=www
     option={{ item.option }}
     value={{ item.value }}
-    backup=yes
   with_items: php_fpm_defaults + php_fpm_settings
   notify: restart php-fpm

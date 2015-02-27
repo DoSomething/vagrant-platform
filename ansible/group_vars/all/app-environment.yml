@@ -6,7 +6,7 @@ app_environment:
   - { option: DS_DB_MASTER_NAME, value: dosomething }
   - { option: DS_DB_MASTER_USER, value: dosomething }
   - { option: DS_DB_MASTER_HOST, value: 127.0.0.1 }
-  - { option: DS_HOSTNAME, value: dev.dosomething.org }
+  - { option: DS_HOSTNAME, value: "{{ app_host }}" }
   - { option: DS_INSECURE_PORT, value: 80 }
   - { option: DS_SECURE_PORT, value: 443 }
 

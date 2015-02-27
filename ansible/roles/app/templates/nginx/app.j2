@@ -43,7 +43,7 @@ server {
     fastcgi_pass   unix:{{ php_fpm_socket }};
     fastcgi_index  index.php;
     include fastcgi_params;
-    fastcgi_param  HTTPS on;
+    # fastcgi_param  HTTPS on;
     fastcgi_param  SCRIPT_FILENAME  {{ app_root }}/html$fastcgi_script_name;
     fastcgi_param  QUERY_STRING     $query_string;
     fastcgi_param  REQUEST_METHOD   $request_method;

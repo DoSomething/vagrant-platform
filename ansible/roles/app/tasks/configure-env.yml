@@ -7,7 +7,6 @@
     section=www
     option=env[{{ item.option }}]
     value={{ item.value }}
-    backup=yes
   with_items: app_environment
   notify: restart php-fpm
 

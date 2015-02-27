@@ -1,14 +1,9 @@
 ---
 
-# User
-app_user: dosomething
-
-# Base
+# System
 timezone: America/New_York
 
-# Web
-php_ini_upload_max_filesize: 10M
-
 # App
+app_user: dosomething
 app_host: dev.dosomething.org
 app_root: /var/www/{{ app_host }}
