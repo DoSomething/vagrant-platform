@@ -6,5 +6,4 @@
 - include: cache.yml
 - include: app.yml
 - include: configure-vhost.yml
-- include: configure-db.yml
 - include: configure-env.yml
