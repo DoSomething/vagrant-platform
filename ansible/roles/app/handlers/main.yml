@@ -1,0 +1,5 @@
+---
+
+- name: drush cc drush
+  remote_user: "{{ app_user }}"
+  shell: drush -y cc drush
