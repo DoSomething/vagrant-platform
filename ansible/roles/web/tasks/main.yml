@@ -5,4 +5,4 @@
 - include: composer.yml
 - include: web-server.yml
 - include: configure-php.yml
-- include: configure-web.yml
+- include: configure-web-server.yml
