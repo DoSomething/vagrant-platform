@@ -1,9 +1,9 @@
 ---
 
-- name: System | Full Upgrade
+- name: System | Safe Upgrade
   sudo: yes
   apt: >
-    upgrade=dist
+    upgrade=safe
     state=latest
     dpkg_options=force-confnew
     update_cache=yes

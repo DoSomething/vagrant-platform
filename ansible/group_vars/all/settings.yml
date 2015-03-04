@@ -1,8 +1,5 @@
 ---
 
-# System
-timezone: America/New_York
-
 # App
 app_user: dosomething
 app_host: dev.dosomething.org

@@ -10,7 +10,7 @@
   with_items: app_environment
   notify: restart php-fpm
 
-- name: Environment | Setup /etc/environment
+- name: Environment | Setup Shell Environment
   sudo: yes
   lineinfile:
     create=yes
