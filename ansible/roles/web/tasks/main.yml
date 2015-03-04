@@ -1,37 +1,8 @@
 ---
 
-- name: Install PHP
-  apt: name={{ item }} state=latest
-  sudo: yes
-  with_items:
-    - php5
-    - php5-fpm
-    - php5-cli
-
-- name: Install PHP libraries
-  apt: name={{ item }} state=latest
-  sudo: yes
-  with_items:
-    - php5-mysql
-    - php5-curl
-    - php5-gd
-
-- name: Install Composer
-  sudo: yes
-  shell: >
-    curl -sS https://getcomposer.org/installer | php --
-    --install-dir={{ composer_path }}
-    --filename=composer
-  args:
-    creates: "{{ composer_path }}/composer"
-
-- name: Update Composer
-  sudo: yes
-  shell: composer self-update
-  register: composer_update
-  changed_when: '"You are already using composer" not in composer_update.stderr'
-  when: composer_self_update
-
-- name: Install Web Server nginx
-  apt: name=nginx state=latest
-  sudo: yes
+- include: php.yml
+- include: php-thirdparty.yml
+- include: composer.yml
+- include: web-server.yml
+- include: configure-php.yml
+- include: configure-web.yml

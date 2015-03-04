@@ -4,9 +4,7 @@
 - include: drush.yml
 - include: nodejs.yml
 - include: cache.yml
-- include: php-extensions.yml
 - include: app.yml
-- include: configure-php.yml
-- include: configure-web.yml
+- include: configure-vhost.yml
 - include: configure-db.yml
 - include: configure-env.yml

@@ -1,0 +1,5 @@
+---
+
+- name: Install Web Server nginx
+  apt: name=nginx state=latest
+  sudo: yes

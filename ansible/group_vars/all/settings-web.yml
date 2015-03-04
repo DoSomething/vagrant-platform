@@ -12,3 +12,5 @@ php_ini_settings:
 php_fpm_settings:
   - { option: user,   value: "{{ app_user }}" }
   - { option: group,  value: "{{ app_user }}" }
+
+php_thirdparty_newrelic: yes

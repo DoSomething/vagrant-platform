@@ -3,3 +3,15 @@
 # Composer
 composer_self_update: no
 composer_path: '/usr/local/bin'
+
+# PHP
+php_ini_settings: []
+php_fpm_socket: /var/run/php5-fpm.sock
+php_fpm_settings: []
+php_fpm_defaults:
+  - { option: listen,                 value: "{{ php_fpm_socket }}" }
+  - { option: listen.allowed_clients, value: "127.0.0.1" }
+  - { option: listen.mode,            value: "0600" }
+
+# PHP Third Party Extensions
+php_thirdparty_newrelic: no
