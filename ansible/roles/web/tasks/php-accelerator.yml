@@ -1,6 +1,0 @@
----
-
-- name: PHP Accelerator | Install APC
-  apt: name=php-apc state=latest
-  sudo: yes
-  notify: restart php-fpm
