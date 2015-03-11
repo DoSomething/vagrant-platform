@@ -6,3 +6,10 @@
     src=scripts/setup-www.j2
     dest=bin/setup-www
     mode="u=rwx,g=r,o=r"
+
+- name: Setup welcome message
+  sudo: yes
+  template: >
+    src=etc/motd.j2
+    dest=/etc/update-motd.d/60-dosomething
+    mode="u=rwx,g=rx,o=rx"
