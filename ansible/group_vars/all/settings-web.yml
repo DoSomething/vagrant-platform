@@ -5,6 +5,9 @@ php_ini_settings:
   - section: PHP
     option: upload_max_filesize
     value: 11M
+  - section: PHP
+    option: display_errors
+    value: "On"
   - section: Date
     option: date.timezone
     value: "{{ timezone }}"
