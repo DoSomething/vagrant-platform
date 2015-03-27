@@ -18,6 +18,10 @@ Vagrant.configure("2") do |config|
     ansible.vault_password_file = ".vault.txt"
   end
 
+  # Http and https.
+  config.vm.network :forwarded_port, guest: 80, host: 8888
+  config.vm.network :forwarded_port, guest: 443, host: 8889
+
   # Solr.
   config.vm.network :forwarded_port, guest: 8983, host: 8983
 
