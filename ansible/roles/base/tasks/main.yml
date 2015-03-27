@@ -3,4 +3,6 @@
 - include: configure-system.yml
 - include: update-system.yml
 - include: install-common-tools.yml
+- include: setup-ntp.yml
+  when: ntp_servers
 - include: setup-user.yml
