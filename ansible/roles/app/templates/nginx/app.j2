@@ -1,8 +1,15 @@
 server {
-  listen   80;
+  listen 80;
+  listen 443 ssl;
+
+  ssl_certificate     /etc/ssl/{{ app_user }}/{{ app_host }}.crt;
+  ssl_certificate_key /etc/ssl/{{ app_user }}/{{ app_host }}.key;
+
   server_name localhost;
+
   access_log /var/log/nginx/{{ app_user }}-access.log;
   error_log /var/log/nginx/{{ app_user }}-error.log;
+
   root {{ app_root }}/html;
   client_max_body_size 20M;
   gzip_static on;
@@ -43,7 +50,7 @@ server {
     fastcgi_pass   unix:{{ php_fpm_socket }};
     fastcgi_index  index.php;
     include fastcgi_params;
-    # fastcgi_param  HTTPS on;
+    fastcgi_param  HTTPS $https;
     fastcgi_param  SCRIPT_FILENAME  {{ app_root }}/html$fastcgi_script_name;
     fastcgi_param  QUERY_STRING     $query_string;
     fastcgi_param  REQUEST_METHOD   $request_method;
