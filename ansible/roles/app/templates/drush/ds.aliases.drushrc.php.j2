@@ -15,7 +15,7 @@ $aliases["default"] = array (
     array (
       'default' =>
       array (
-        'database' => 'dosomething',
+        'database' => '{{ app_user }}',
         'username' => 'root',
         'password' => '',
         'host' => 'localhost',
@@ -78,7 +78,7 @@ foreach ($countries as $country) {
         array (
           'default' =>
           array (
-            'database' => "dosomething_{$country}",
+            'database' => "{{ app_user }}_{$country}",
             'username' => 'root',
             'password' => '',
             'host' => 'localhost',
