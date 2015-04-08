@@ -3,9 +3,4 @@
 - name: Setup vagrant
   hosts: all
   roles:
-    - { role: base }
-    - { role: db }
-    - { role: web }
-    - { role: app }
-    - { role: solr }
-    - { role: vagrant }
+    - { role: dosomething.vagrant }

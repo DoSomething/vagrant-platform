@@ -1,5 +1,0 @@
----
-
-- name: restart ntp
-  sudo: yes
-  service: name=ntp state=restarted
