@@ -1,7 +1,7 @@
 
 # Environment
 
-app_environment:
+app_environment_variables:
   - { option: DS_ENVIRONMENT, value: local }
   - { option: DS_APP_ROOT, value: "{{ app_root }}" }
   - { option: DS_HOSTNAME, value: "{{ app_host }}" }
