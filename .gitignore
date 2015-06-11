@@ -1,6 +1,0 @@
-.vault.txt
-.vagrant
-*.DS_Store
-package.box
-tmp
-ansible/roles
